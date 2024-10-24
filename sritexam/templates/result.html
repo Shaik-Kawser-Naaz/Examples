@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="n5">ID:</label>
+        <input name="n5" id="n5" type="number">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if student %}
+        <h2>Student Details</h2>
+        <p><strong>Name:</strong> {{ student.name }}</p>
+        <p><strong>Pass subjects:</strong> {{ student.pass_subjects }}</p>
+        <p><strong>Fail subjects:</strong> {{ student.fail_subjects }}</p>
+        <p><strong>Semester:</strong> {{ student.semester }}</p>
+    {% else %}
+        {% if request.method == "POST" %}
+            <p>Student not found.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

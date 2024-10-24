@@ -1,0 +1,18 @@
+.max {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: blue;
+    color:brown;
+}
+
+#main-header {
+    background-color: olivedrab;
+    color: pink;
+    padding: 20px;
+    text-align: center;
+}
+
+html {
+    background-color: aqua;
+}
